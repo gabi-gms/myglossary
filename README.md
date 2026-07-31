@@ -12,7 +12,7 @@ The project was also developed as a full-stack portfolio application, focusing o
 
 ## Live Demo
 
-[Open myGlossary](https://myglossary-self.vercel.app/terms/algoritmo)
+[Open myGlossary](https://myglossary-self.vercel.app)
 
 
 ## Features
