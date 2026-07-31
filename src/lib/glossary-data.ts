@@ -284,12 +284,12 @@ export async function getTermPageData(
     );
   }
 
-  if (!termData) {
-    return {
-      term: null,
-      relatedTerms: [],
-    };
-  }
+if (!termData) {
+  return {
+    term: null,
+    relatedTerms: [],
+  };
+}
 
   const term = mapTermWithDetails(
     termData as unknown as TermWithDetailsRow,
