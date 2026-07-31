@@ -3,12 +3,7 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 
 import { RelatedTermCard } from "@/components/terms/RelatedTermCard";
-import { getGlossaryData } from "@/lib/glossary-data";
-import {
-  buildTermsWithDetails,
-  findRelatedTerms,
-  findTermBySlug,
-} from "@/lib/glossary";
+import { getTermPageData } from "@/lib/glossary-data";
 
 type TermPageProps = {
   params: Promise<{
@@ -21,25 +16,14 @@ export default async function TermPage({
 }: TermPageProps) {
 const { slug } = await params;
 
-const glossaryData = await getGlossaryData();
-
-const terms = buildTermsWithDetails(
-  glossaryData.terms,
-  glossaryData.subcategories,
-  glossaryData.categories,
-);
-
-const term = findTermBySlug(terms, slug);
+const {
+  term,
+  relatedTerms,
+} = await getTermPageData(slug);
 
 if (!term) {
   notFound();
 }
-
-const relatedTerms = findRelatedTerms(
-  term.id,
-  terms,
-  glossaryData.termRelations,
-);
 
   const categoryColor = {
     "--category-color": term.category.color,
