@@ -27,3 +27,8 @@ export type TermRelation = {
   termAId: string;
   termBId: string;
 };
+
+export type TermWithDetails = Term & {
+  category: Category;
+  subcategory: Subcategory;
+};
