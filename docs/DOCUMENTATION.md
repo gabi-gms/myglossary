@@ -521,155 +521,145 @@ Branches específicas poderão ser utilizadas depois da primeira versão públic
 
 # 13. Roadmap do projeto
 
-## Fase 1 — Planejamento e modelagem
+## Fase 1 — Planejamento e modelagem ✅
 
-### Concluído
-
-[x] definição do objetivo do glossário;
-[x] definição do público e do escopo inicial;
-[x] definição das informações de cada termo;
-[x] escolha entre página única e páginas individuais;
-[x] definição das relações entre categorias, subcategorias e termos;
-[x] definição das regras de pesquisa;
-[x] definição dos filtros;
-[x] definição da paginação;
-[x] definição do comportamento dos cards;
-[x] definição da página individual;
-[x] definição dos estados de erro e carregamento;
-[x] definição do rodapé;
-[x] escolha da stack.
+- [x] definição do objetivo do glossário;
+- [x] definição do público e do escopo inicial;
+- [x] definição das informações de cada termo;
+- [x] escolha entre página única e páginas individuais;
+- [x] definição das relações entre categorias, subcategorias e termos;
+- [x] definição das regras de pesquisa;
+- [x] definição dos filtros;
+- [x] definição da paginação;
+- [x] definição do comportamento dos cards;
+- [x] definição da página individual;
+- [x] definição dos estados de erro e carregamento;
+- [x] definição do rodapé;
+- [x] escolha da stack.
 
 ---
 
-## Fase 2 — Inicialização do projeto
+## Fase 2 — Inicialização do projeto ✅
 
-### Concluído
-
-[x] criação do projeto Next.js;
-[x] configuração do TypeScript;
-[x] configuração do App Router;
-[x] configuração do Tailwind CSS;
-[x] inicialização do Git;
-[x] criação do repositório no GitHub;
-[x] definição do fluxo de commits;
-[x] criação dos primeiros tipos do domínio;
-[x] criação dos dados simulados iniciais.
+- [x] criação do projeto Next.js;
+- [x] configuração do TypeScript;
+- [x] configuração do App Router;
+- [x] configuração do Tailwind CSS;
+- [x] inicialização do Git;
+- [x] criação do repositório no GitHub;
+- [x] definição do fluxo de commits;
+- [x] criação dos primeiros tipos do domínio;
+- [x] criação dos dados simulados iniciais.
 
 ---
 
-## Fase 3 — Interface inicial
+## Fase 3 — Interface inicial ✅
 
-### Concluído
-
-[x] criação do card dos termos;
-[x] criação do grid responsivo;
-[x] criação da página individual;
-[x] criação dos cards de termos relacionados;
-[x] criação do breadcrumb;
-[x] criação da página de termo inexistente;
-[x] criação da pesquisa;
-[x] criação dos filtros de categoria e subcategoria;
-[x] criação das tags de filtros selecionados;
-[x] criação do estado de nenhum resultado;
-[x] criação da paginação;
-[x] criação do rodapé;
-[x] criação do menu global;
-[x] criação do selo visual BETA;
-[x] aplicação da identidade visual escura;
-[x] centralização das cores do tema.
+- [x] criação do card dos termos;
+- [x] criação do grid responsivo;
+- [x] criação da página individual;
+- [x] criação dos cards de termos relacionados;
+- [x] criação do breadcrumb;
+- [x] criação da página de termo inexistente;
+- [x] criação da pesquisa;
+- [x] criação dos filtros de categoria e subcategoria;
+- [x] criação das tags de filtros selecionados;
+- [x] criação do estado de nenhum resultado;
+- [x] criação da paginação;
+- [x] criação do rodapé;
+- [x] criação do menu global;
+- [x] criação do selo visual BETA;
+- [x] aplicação da identidade visual escura;
+- [x] centralização das cores do tema.
 
 ---
 
-## Fase 4 — Banco de dados
+## Fase 4 — Banco de dados ✅
 
-### Concluído
-
-[x] criação do projeto no Supabase;
-[x] configuração das variáveis de ambiente;
-[x] criação do cliente do Supabase;
-[x] criação das tabelas;
-[x] criação das chaves estrangeiras;
-[x] criação das restrições de integridade;
-[x] criação dos índices;
-[x] configuração do Row Level Security;
-[x] criação das políticas públicas de leitura;
-[x] criação da carga inicial de dados;
-[x] versionamento das migrations;
-[x] validação dos relacionamentos;
-[x] integração da página principal com o banco;
-[x] integração da página individual com o banco;
-[x] remoção dos mocks.
+- [x] criação do projeto no Supabase;
+- [x] configuração das variáveis de ambiente;
+- [x] criação do cliente do Supabase;
+- [x] criação das tabelas;
+- [x] criação das chaves estrangeiras;
+- [x] criação das restrições de integridade;
+- [x] criação dos índices;
+- [x] configuração do Row Level Security;
+- [x] criação das políticas públicas de leitura;
+- [x] criação da carga inicial de dados;
+- [x] versionamento das migrations;
+- [x] validação dos relacionamentos;
+- [x] integração da página principal com o banco;
+- [x] integração da página individual com o banco;
+- [x] remoção dos mocks.
 
 ---
 
-## Fase 5 — Estados e otimizações
+## Fase 5 — Estados e otimizações ✅
 
-### Concluído
-
-[x] criação do skeleton do catálogo;
-[x] criação do skeleton da página individual;
-[x] criação do estado de erro do catálogo;
-[x] criação do estado de erro da página individual;
-[x] criação da ação de tentar novamente;
-[x] separação entre erro e termo inexistente;
-[x] otimização da consulta do catálogo;
-[x] otimização da consulta da página individual;
-[x] remoção do carregamento desnecessário do glossário completo;
-[x] teste e remoção de uma estratégia de cache que piorou a experiência.
+- [x] criação do skeleton do catálogo;
+- [x] criação do skeleton da página individual;
+- [x] criação do estado de erro do catálogo;
+- [x] criação do estado de erro da página individual;
+- [x] criação da ação de tentar novamente;
+- [x] separação entre erro e termo inexistente;
+- [x] otimização da consulta do catálogo;
+- [x] otimização da consulta da página individual;
+- [x] remoção do carregamento desnecessário do glossário completo;
+- [x] teste e remoção de uma estratégia de cache que piorou a experiência.
 
 ---
 
-## Fase 6 — Documentação e preparação da release
+## Fase 6 — Documentação e preparação da release ⏳
 
-[x] criação de um README;
-[x] descrição das funcionalidades;
-[x] documentação da instalação;
-[x] documentação das variáveis de ambiente;
-[x] documentação do banco de dados;
-[x] documentação das decisões técnicas;
-[x] documentação das regras de negócio;
-[x] documentação do roadmap.
-[ ] confirmar os links reais de GitHub, LinkedIn e e-mail;
-[ ] atualizar a versão exibida no rodapé para `v1.0.0`;
-[ ] executar a revisão final dos textos;
-[ ] executar `npm run lint`;
-[ ] executar `npm run build`;
-[ ] revisar o projeto em modo de produção;
-[ ] verificar se nenhum segredo aparece no Git;
-[ ] preparar as variáveis de ambiente na Vercel;
-[ ] publicar a aplicação;
-[ ] testar a URL pública;
-[ ] criar a tag ou release `v1.0.0` no GitHub.
+- [x] criação de um README;
+- [x] descrição das funcionalidades;
+- [x] documentação da instalação;
+- [x] documentação das variáveis de ambiente;
+- [x] documentação do banco de dados;
+- [x] documentação das decisões técnicas;
+- [x] documentação das regras de negócio;
+- [x] documentação do roadmap.
+- [ ] confirmar os links reais de GitHub, LinkedIn e e-mail;
+- [ ] atualizar a versão exibida no rodapé para `v1.0.0`;
+- [ ] executar a revisão final dos textos;
+- [ ] executar `npm run lint`;
+- [ ] executar `npm run build`;
+- [ ] revisar o projeto em modo de produção;
+- [ ] verificar se nenhum segredo aparece no Git;
+- [ ] preparar as variáveis de ambiente na Vercel;
+- [ ] publicar a aplicação;
+- [ ] testar a URL pública;
+- [ ] criar a tag ou release `v1.0.0` no GitHub.
 
 ---
 
-## Fase 7 — Deploy da versão 1.0.0
+## Fase 7 — Deploy da versão 1.0.0 ⏳
 
-[ ] 1. Atualizar a versão da aplicação para:
+- [ ] 1. Atualizar a versão da aplicação para:
 
 ```text
 v1.0.0
 ```
 
-[ ] 2. Confirmar que o projeto compila:
+- [ ] 2. Confirmar que o projeto compila:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-[ ] 3. Conectar o repositório à Vercel.
+- [ ] 3. Conectar o repositório à Vercel.
 
-[ ] 4. Configurar na Vercel:
+- [ ] 4. Configurar na Vercel:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 ```
 
-[ ] 5. Publicar a aplicação.
+- [ ] 5. Publicar a aplicação.
 
-[ ] 6. Validar em produção:
+- [ ] 6. Validar em produção:
 
 * página principal;
 * pesquisa;
@@ -686,89 +676,89 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 * versão mobile;
 * versão desktop.
 
-[ ] 7. Criar a release no GitHub.
+- [ ] 7. Criar a release no GitHub.
 
 ---
 
-# 14. Roadmap pós-MVP
+# 14. Roadmap pós-MVP 
 
 Os itens abaixo não fazem parte da versão `v1.0.0`, mas poderão ser desenvolvidos nas versões seguintes.
 
-## Conteúdo
+## Conteúdo ⏳
 
-[ ] ampliar o glossário para aproximadamente 500 termos;
-[ ] adicionar mais categorias e subcategorias;
-[ ] revisar e padronizar as descrições;
-[ ] criar um fluxo de importação em massa;
-[ ] validar automaticamente slugs e relações;
-[ ] adicionar mais termos relacionados.
+- [ ] ampliar o glossário para aproximadamente 500 termos;
+- [ ] adicionar mais categorias e subcategorias;
+- [ ] revisar e padronizar as descrições;
+- [ ] criar um fluxo de importação em massa;
+- [ ] validar automaticamente slugs e relações;
+- [ ] adicionar mais termos relacionados.
 
-## Administração
+## Administração ⏳
 
-[ ] criar autenticação;
-[ ] criar uma área administrativa;
-[ ] permitir criação de categorias;
-[ ] permitir criação de subcategorias;
-[ ] permitir criação e edição de termos;
-[ ] permitir gerenciamento de relações;
-[ ] invalidar dados após alterações administrativas.
+- [ ] criar autenticação;
+- [ ] criar uma área administrativa;
+- [ ] permitir criação de categorias;
+- [ ] permitir criação de subcategorias;
+- [ ] permitir criação e edição de termos;
+- [ ] permitir gerenciamento de relações;
+- [ ] invalidar dados após alterações administrativas.
 
-## Sugestões da comunidade
+## Sugestões da comunidade ⏳
 
-[ ] criar formulário público de sugestões;
-[ ] armazenar sugestões separadamente;
-[ ] criar fluxo de análise e aprovação;
-[ ] evitar publicação direta de conteúdo enviado por visitantes.
+- [ ] criar formulário público de sugestões;
+- [ ] armazenar sugestões separadamente;
+- [ ] criar fluxo de análise e aprovação;
+- [ ] evitar publicação direta de conteúdo enviado por visitantes.
 
-## Pesquisa
+## Pesquisa ⏳
 
-[ ] pesquisar também por variações;
-[ ] pesquisar em descrições;
-[ ] adicionar sugestões durante a digitação;
-[ ] destacar o trecho pesquisado;
-[ ] considerar pesquisa textual do PostgreSQL.
+- [ ] pesquisar também por variações;
+- [ ] pesquisar em descrições;
+- [ ] adicionar sugestões durante a digitação;
+- [ ] destacar o trecho pesquisado;
+- [ ] considerar pesquisa textual do PostgreSQL.
 
-## Experiência do usuário
+## Experiência do usuário ⏳
 
-[ ] preservar pesquisa e filtros ao voltar de um termo;
-[ ] armazenar filtros na URL;
-[ ] adicionar favoritos;
-[ ] adicionar tema claro;
-[ ] permitir compartilhamento direto;
-[ ] adicionar botão de copiar link;
-[ ] adicionar histórico de termos visitados.
-[ ] ajustar paleta de cores do tema escuro.
-[ ] inserir opção de tema claro.
-[ ] inserir possibilidade de escolher entre conteúdo em inglês ou português.
+- [ ] preservar pesquisa e filtros ao voltar de um termo;
+- [ ] armazenar filtros na URL;
+- [ ] adicionar favoritos;
+- [ ] adicionar tema claro;
+- [ ] permitir compartilhamento direto;
+- [ ] adicionar botão de copiar link;
+- [ ] adicionar histórico de termos visitados.
+- [ ] ajustar paleta de cores do tema escuro.
+- [ ] inserir opção de tema claro.
+- [ ] inserir possibilidade de escolher entre conteúdo em inglês ou português.
 
-## SEO
+## SEO ⏳
 
-[ ] criar metadados globais;
-[ ] criar metadados dinâmicos para cada termo;
-[ ] criar sitemap;
-[ ] criar robots.txt;
-[ ] adicionar favicon;
-[ ] adicionar imagem de compartilhamento;
-[ ] adicionar dados estruturados quando fizer sentido.
+- [ ] criar metadados globais;
+- [ ] criar metadados dinâmicos para cada termo;
+- [ ] criar sitemap;
+- [ ] criar robots.txt;
+- [ ] adicionar favicon;
+- [ ] adicionar imagem de compartilhamento;
+- [ ] adicionar dados estruturados quando fizer sentido.
 
-## Qualidade
+## Qualidade ⏳
 
-[ ] criar testes unitários;
-[ ] criar testes de componentes;
-[ ] criar testes de integração;
-[ ] criar testes ponta a ponta;
-[ ] automatizar lint e build no GitHub Actions;
-[ ] revisar acessibilidade;
-[ ] medir contraste;
-[ ] testar navegação completa por teclado.
+- [ ] criar testes unitários;
+- [ ] criar testes de componentes;
+- [ ] criar testes de integração;
+- [ ] criar testes ponta a ponta;
+- [ ] automatizar lint e build no GitHub Actions;
+- [ ] revisar acessibilidade;
+- [ ] medir contraste;
+- [ ] testar navegação completa por teclado.
 
-## Monitoramento e desempenho
+## Monitoramento e desempenho ⏳
 
-[ ] adicionar analytics simples;
-[ ] monitorar erros em produção;
-[ ] medir o desempenho real das consultas;
-[ ] reconsiderar cache somente após obter métricas;
-[ ] investigar estratégias de revalidação após a criação do painel administrativo.
+- [ ] adicionar analytics simples;
+- [ ] monitorar erros em produção;
+- [ ] medir o desempenho real das consultas;
+- [ ] reconsiderar cache somente após obter métricas;
+- [ ] investigar estratégias de revalidação após a criação do painel administrativo.
 
 ---
 
@@ -776,16 +766,16 @@ Os itens abaixo não fazem parte da versão `v1.0.0`, mas poderão ser desenvolv
 
 A versão `v1.0.0` estará concluída quando:
 
-[ ] o catálogo estiver disponível publicamente;
-[ ] os dados forem carregados do Supabase;
-[ ] pesquisa e filtros estiverem funcionando;
-[ ] as páginas individuais puderem ser acessadas;
-[ ] as relações bidirecionais estiverem funcionando;
-[ ] os estados de loading, erro e not found estiverem funcionando;
-[ ] o layout estiver responsivo;
-[ ] o README estiver atualizado;
-[ ] esta documentação estiver no repositório;
-[ ] a versão estiver atualizada;
-[ ] o build de produção estiver válido;
-[ ] a aplicação estiver publicada na Vercel;
-[ ] os fluxos principais tiverem sido testados na URL pública.
+- [ ] o catálogo estiver disponível publicamente;
+- [ ] os dados forem carregados do Supabase;
+- [ ] pesquisa e filtros estiverem funcionando;
+- [ ] as páginas individuais puderem ser acessadas;
+- [ ] as relações bidirecionais estiverem funcionando;
+- [ ] os estados de loading, erro e not found estiverem funcionando;
+- [ ] o layout estiver responsivo;
+- [ ] o README estiver atualizado;
+- [ ] esta documentação estiver no repositório;
+- [ ] a versão estiver atualizada;
+- [ ] o build de produção estiver válido;
+- [ ] a aplicação estiver publicada na Vercel;
+- [ ] os fluxos principais tiverem sido testados na URL pública.
