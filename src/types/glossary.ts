@@ -32,3 +32,17 @@ export type TermWithDetails = Term & {
   category: Category;
   subcategory: Subcategory;
 };
+
+export type TermSummary = Pick<
+  Term,
+  | "id"
+  | "subcategoryId"
+  | "name"
+  | "slug"
+  | "shortDescription"
+>;
+
+export type TermSummaryWithDetails = TermSummary & {
+  category: Category;
+  subcategory: Subcategory;
+};

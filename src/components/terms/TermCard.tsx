@@ -1,10 +1,12 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 
-import type { TermWithDetails } from "@/types/glossary";
+import type {
+  TermSummaryWithDetails,
+} from "@/types/glossary";
 
 type TermCardProps = {
-  term: TermWithDetails;
+  term: TermSummaryWithDetails;
 };
 
 export function TermCard({ term }: TermCardProps) {

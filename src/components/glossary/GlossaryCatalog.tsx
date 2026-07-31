@@ -6,13 +6,13 @@ import { TermCard } from "@/components/terms/TermCard";
 import type {
   Category,
   Subcategory,
-  TermWithDetails,
+  TermSummaryWithDetails,
 } from "@/types/glossary";
 
 import { MultiSelectFilter } from "./MultiSelectFilter";
 
 type GlossaryCatalogProps = {
-  terms: TermWithDetails[];
+  terms: TermSummaryWithDetails[];
   categories: Category[];
   subcategories: Subcategory[];
 };

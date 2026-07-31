@@ -7,6 +7,7 @@ import type {
   Subcategory,
   Term,
   TermRelation,
+  TermSummary,
 } from "@/types/glossary";
 
 type CategoryRow = {
@@ -39,12 +40,115 @@ type TermRelationRow = {
   term_b_id: string;
 };
 
+export type CatalogData = {
+  categories: Category[];
+  subcategories: Subcategory[];
+  terms: TermSummary[];
+};
+
 export type GlossaryData = {
   categories: Category[];
   subcategories: Subcategory[];
   terms: Term[];
   termRelations: TermRelation[];
 };
+
+type TermSummaryRow = {
+  id: string;
+  subcategory_id: string;
+  name: string;
+  slug: string;
+  short_description: string;
+};
+
+export async function getCatalogData(): Promise<CatalogData> {
+  const supabase = createSupabaseClient();
+
+  const [
+    categoriesResult,
+    subcategoriesResult,
+    termsResult,
+  ] = await Promise.all([
+    supabase
+      .from("categories")
+      .select("id, name, slug, color")
+      .order("name"),
+
+    supabase
+      .from("subcategories")
+      .select("id, category_id, name, slug")
+      .order("name"),
+
+    supabase
+      .from("terms")
+      .select(
+        `
+          id,
+          subcategory_id,
+          name,
+          slug,
+          short_description
+        `,
+      )
+      .order("name"),
+  ]);
+
+  const queryError =
+    categoriesResult.error ??
+    subcategoriesResult.error ??
+    termsResult.error;
+
+  if (queryError) {
+    console.error(
+      "[myGlossary] Failed to load catalog data.",
+      queryError,
+    );
+
+    throw new Error(
+      "Não foi possível carregar o catálogo.",
+    );
+  }
+
+  const categoryRows =
+    (categoriesResult.data ?? []) as CategoryRow[];
+
+  const subcategoryRows =
+    (subcategoriesResult.data ?? []) as SubcategoryRow[];
+
+  const termRows =
+    (termsResult.data ?? []) as TermSummaryRow[];
+
+  const categories: Category[] = categoryRows.map(
+    (category) => ({
+      id: category.id,
+      name: category.name,
+      slug: category.slug,
+      color: category.color,
+    }),
+  );
+
+  const subcategories: Subcategory[] =
+    subcategoryRows.map((subcategory) => ({
+      id: subcategory.id,
+      categoryId: subcategory.category_id,
+      name: subcategory.name,
+      slug: subcategory.slug,
+    }));
+
+  const terms: TermSummary[] = termRows.map((term) => ({
+    id: term.id,
+    subcategoryId: term.subcategory_id,
+    name: term.name,
+    slug: term.slug,
+    shortDescription: term.short_description,
+  }));
+
+  return {
+    categories,
+    subcategories,
+    terms,
+  };
+}
 
 export async function getGlossaryData(): Promise<GlossaryData> {
   const supabase = createSupabaseClient();
