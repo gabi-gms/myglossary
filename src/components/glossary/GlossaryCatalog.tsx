@@ -25,6 +25,59 @@ function normalizeText(value: string) {
     .toLocaleLowerCase("pt-BR");
 }
 
+const TERMS_PER_PAGE = 20;
+
+type PaginationItem =
+  | number
+  | "start-ellipsis"
+  | "end-ellipsis";
+
+function getPaginationItems(
+  currentPage: number,
+  totalPages: number,
+): PaginationItem[] {
+  if (totalPages <= 7) {
+    return Array.from(
+      { length: totalPages },
+      (_, index) => index + 1,
+    );
+  }
+
+  if (currentPage <= 4) {
+    return [
+      1,
+      2,
+      3,
+      4,
+      5,
+      "end-ellipsis",
+      totalPages,
+    ];
+  }
+
+  if (currentPage >= totalPages - 3) {
+    return [
+      1,
+      "start-ellipsis",
+      totalPages - 4,
+      totalPages - 3,
+      totalPages - 2,
+      totalPages - 1,
+      totalPages,
+    ];
+  }
+
+  return [
+    1,
+    "start-ellipsis",
+    currentPage - 1,
+    currentPage,
+    currentPage + 1,
+    "end-ellipsis",
+    totalPages,
+  ];
+}
+
 export function GlossaryCatalog({
   terms,
   categories,
@@ -35,6 +88,7 @@ export function GlossaryCatalog({
     useState<string[]>([]);
   const [selectedSubcategoryIds, setSelectedSubcategoryIds] =
     useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const availableSubcategories = useMemo(() => {
     if (selectedCategoryIds.length === 0) {
@@ -75,6 +129,23 @@ export function GlossaryCatalog({
     terms,
   ]);
 
+  const totalPages = Math.ceil(
+  filteredTerms.length / TERMS_PER_PAGE,
+);
+
+const firstTermIndex =
+  (currentPage - 1) * TERMS_PER_PAGE;
+
+const visibleTerms = filteredTerms.slice(
+  firstTermIndex,
+  firstTermIndex + TERMS_PER_PAGE,
+);
+
+const paginationItems = getPaginationItems(
+  currentPage,
+  totalPages,
+);
+
   const selectedCategories = categories.filter((category) =>
     selectedCategoryIds.includes(category.id),
   );
@@ -90,6 +161,8 @@ export function GlossaryCatalog({
     selectedSubcategoryIds.length > 0;
 
   function toggleCategory(categoryId: string) {
+    setCurrentPage(1);
+
     const isSelected =
       selectedCategoryIds.includes(categoryId);
 
@@ -132,6 +205,8 @@ export function GlossaryCatalog({
   }
 
   function toggleSubcategory(subcategoryId: string) {
+    setCurrentPage(1);
+
     setSelectedSubcategoryIds((currentIds) => {
       const isSelected = currentIds.includes(subcategoryId);
 
@@ -149,6 +224,7 @@ export function GlossaryCatalog({
     setQuery("");
     setSelectedCategoryIds([]);
     setSelectedSubcategoryIds([]);
+    setCurrentPage(1);
   }
 
   return (
@@ -178,9 +254,10 @@ export function GlossaryCatalog({
             <input
               type="search"
               value={query}
-              onChange={(event) =>
-                setQuery(event.target.value)
-              }
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setCurrentPage(1);
+               }}
               placeholder="Pesquisar um termo..."
               className="
                 w-full rounded-lg border border-[#3a363d]
@@ -268,64 +345,162 @@ export function GlossaryCatalog({
 
           <p
             className="
-              shrink-0 text-sm text-[#b9b1b7]
-              sm:pt-1
+                shrink-0 text-sm text-[#b9b1b7]
+                sm:pt-1
             "
             aria-live="polite"
-          >
+            >
             {filteredTerms.length}{" "}
             {filteredTerms.length === 1
-              ? "termo encontrado"
-              : "termos encontrados"}
-          </p>
+                ? "termo encontrado"
+                : "termos encontrados"}
+
+            {filteredTerms.length > 0 && (
+                <span className="ml-2 text-[#777077]">
+                • Página {currentPage} de {totalPages}
+                </span>
+            )}
+        </p>
         </div>
       </header>
 
       {filteredTerms.length > 0 ? (
-        <section
-          aria-label="Termos do glossário"
+  <>
+    <section
+      aria-label="Termos do glossário"
+      className="
+        grid grid-cols-1 gap-5
+        sm:grid-cols-2
+        lg:grid-cols-3
+        xl:grid-cols-4
+      "
+    >
+      {visibleTerms.map((term) => (
+        <TermCard key={term.id} term={term} />
+      ))}
+    </section>
+
+    {totalPages > 1 && (
+      <nav
+        aria-label="Paginação do glossário"
+        className="
+          mt-10 flex flex-wrap items-center
+          justify-center gap-2
+        "
+      >
+        <button
+          type="button"
+          disabled={currentPage === 1}
+          onClick={() =>
+            setCurrentPage((page) => page - 1)
+          }
           className="
-            grid grid-cols-1 gap-5
-            sm:grid-cols-2
-            lg:grid-cols-3
-            xl:grid-cols-4
+            rounded-lg border border-[#3a363d]
+            bg-[#222024] px-4 py-2
+            text-sm text-[#d5cfd3]
+            transition
+            hover:border-[#6a626a]
+            disabled:cursor-not-allowed
+            disabled:opacity-40
           "
         >
-          {filteredTerms.map((term) => (
-            <TermCard key={term.id} term={term} />
-          ))}
-        </section>
-      ) : (
-        <section
+          Anterior
+        </button>
+
+        {paginationItems.map((item) => {
+          if (typeof item === "string") {
+            return (
+              <span
+                key={item}
+                aria-hidden="true"
+                className="
+                  flex size-10 items-center
+                  justify-center text-[#777077]
+                "
+              >
+                …
+              </span>
+            );
+          }
+
+          const isCurrentPage =
+            item === currentPage;
+
+          return (
+            <button
+              key={item}
+              type="button"
+              onClick={() => setCurrentPage(item)}
+              aria-current={
+                isCurrentPage ? "page" : undefined
+              }
+              aria-label={`Ir para a página ${item}`}
+              className={`
+                flex size-10 items-center justify-center
+                rounded-lg border text-sm transition
+                ${
+                  isCurrentPage
+                    ? "border-[#c97c91] bg-[#c97c91] font-semibold text-[#181719]"
+                    : "border-[#3a363d] bg-[#222024] text-[#d5cfd3] hover:border-[#6a626a]"
+                }
+              `}
+            >
+              {item}
+            </button>
+          );
+        })}
+
+        <button
+          type="button"
+          disabled={currentPage === totalPages}
+          onClick={() =>
+            setCurrentPage((page) => page + 1)
+          }
           className="
-            flex min-h-80 flex-col items-center
-            justify-center gap-4 rounded-xl
-            border border-dashed border-[#3a363d]
-            px-6 text-center
+            rounded-lg border border-[#3a363d]
+            bg-[#222024] px-4 py-2
+            text-sm text-[#d5cfd3]
+            transition
+            hover:border-[#6a626a]
+            disabled:cursor-not-allowed
+            disabled:opacity-40
           "
         >
-          <h2 className="text-2xl font-semibold text-[#f1edf0]">
-            Nenhum termo encontrado
-          </h2>
+          Próxima
+        </button>
+      </nav>
+    )}
+  </>
+) : (
+  <section
+    className="
+      flex min-h-80 flex-col items-center
+      justify-center gap-4 rounded-xl
+      border border-dashed border-[#3a363d]
+      px-6 text-center
+    "
+  >
+    <h2 className="text-2xl font-semibold text-[#f1edf0]">
+      Nenhum termo encontrado
+    </h2>
 
-          <p className="max-w-md text-[#b9b1b7]">
-            Tente alterar a pesquisa ou remover alguns
-            filtros.
-          </p>
+    <p className="max-w-md text-[#b9b1b7]">
+      Tente alterar a pesquisa ou remover alguns filtros.
+    </p>
 
-          <button
-            type="button"
-            onClick={clearAllFilters}
-            className="
-              rounded-lg bg-[#c97c91] px-5 py-3
-              font-medium text-[#181719]
-              transition hover:opacity-90
-            "
-          >
-            Limpar busca e filtros
-          </button>
-        </section>
-      )}
+    <button
+      type="button"
+      onClick={clearAllFilters}
+      className="
+        rounded-lg bg-[#c97c91] px-5 py-3
+        font-medium text-[#181719]
+        transition hover:opacity-90
+      "
+    >
+      Limpar busca e filtros
+    </button>
+  </section>
+)}
     </main>
   );
 }
