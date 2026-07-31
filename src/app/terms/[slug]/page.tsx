@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import type { CSSProperties } from "react";
 
 import { RelatedTermCard } from "@/components/terms/RelatedTermCard";
+import { getGlossaryData } from "@/lib/glossary-data";
 import {
-  getRelatedTerms,
-  getTermBySlug,
+  buildTermsWithDetails,
+  findRelatedTerms,
+  findTermBySlug,
 } from "@/lib/glossary";
 
 type TermPageProps = {
@@ -17,15 +19,27 @@ type TermPageProps = {
 export default async function TermPage({
   params,
 }: TermPageProps) {
-  const { slug } = await params;
+const { slug } = await params;
 
-  const term = getTermBySlug(slug);
+const glossaryData = await getGlossaryData();
 
-  if (!term) {
-    notFound();
-  }
+const terms = buildTermsWithDetails(
+  glossaryData.terms,
+  glossaryData.subcategories,
+  glossaryData.categories,
+);
 
-  const relatedTerms = getRelatedTerms(term.id);
+const term = findTermBySlug(terms, slug);
+
+if (!term) {
+  notFound();
+}
+
+const relatedTerms = findRelatedTerms(
+  term.id,
+  terms,
+  glossaryData.termRelations,
+);
 
   const categoryColor = {
     "--category-color": term.category.color,

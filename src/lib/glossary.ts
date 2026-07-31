@@ -9,6 +9,7 @@ import type {
   Category,
   Subcategory,
   Term,
+  TermRelation,
   TermWithDetails,
 } from "@/types/glossary";
 
@@ -71,32 +72,23 @@ export function buildTermsWithDetails(
     .sort(sortTerms);
 }
 
-export function getTermsWithDetails(): TermWithDetails[] {
-  return buildTermsWithDetails(
-    terms,
-    subcategories,
-    categories,
-  );
-}
-
-export function getTermBySlug(
+export function findTermBySlug(
+  sourceTerms: TermWithDetails[],
   slug: string,
 ): TermWithDetails | undefined {
-  return getTermsWithDetails().find(
-    (term) => term.slug === slug,
-  );
+  return sourceTerms.find((term) => term.slug === slug);
 }
 
-export function getRelatedTerms(
+export function findRelatedTerms(
   termId: string,
+  sourceTerms: TermWithDetails[],
+  sourceRelations: TermRelation[],
 ): TermWithDetails[] {
-  const detailedTerms = getTermsWithDetails();
-
   const termsById = new Map(
-    detailedTerms.map((term) => [term.id, term]),
+    sourceTerms.map((term) => [term.id, term]),
   );
 
-  const relatedIds = termRelations
+  const relatedIds = sourceRelations
     .filter(
       (relation) =>
         relation.termAId === termId ||
@@ -115,4 +107,33 @@ export function getRelatedTerms(
         term !== undefined,
     )
     .sort(sortTerms);
+}
+
+/*
+ * As funções abaixo mantêm compatibilidade com os mocks.
+ * Poderemos removê-las quando a transição estiver concluída.
+ */
+
+export function getTermsWithDetails(): TermWithDetails[] {
+  return buildTermsWithDetails(
+    terms,
+    subcategories,
+    categories,
+  );
+}
+
+export function getTermBySlug(
+  slug: string,
+): TermWithDetails | undefined {
+  return findTermBySlug(getTermsWithDetails(), slug);
+}
+
+export function getRelatedTerms(
+  termId: string,
+): TermWithDetails[] {
+  return findRelatedTerms(
+    termId,
+    getTermsWithDetails(),
+    termRelations,
+  );
 }
