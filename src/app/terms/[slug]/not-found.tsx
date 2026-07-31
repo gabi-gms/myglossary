@@ -4,7 +4,7 @@ export default function TermNotFound() {
   return (
     <main
       className="
-        flex min-h-screen flex-col items-center
+        flex min-h-[70vh] flex-col items-center
         justify-center gap-6 px-6 text-center
       "
     >

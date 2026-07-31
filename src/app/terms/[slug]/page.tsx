@@ -34,7 +34,7 @@ export default async function TermPage({
   return (
     <main
       style={categoryColor}
-      className="mx-auto min-h-screen w-[calc(100%-2rem)] max-w-5xl py-10"
+      className="mx-auto w-[calc(100%-2rem)] max-w-5xl py-10"
     >
       <header className="mb-8">
         <Link

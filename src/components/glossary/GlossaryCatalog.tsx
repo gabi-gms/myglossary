@@ -230,7 +230,7 @@ const paginationItems = getPaginationItems(
   return (
     <main
       className="
-        mx-auto min-h-screen w-[calc(100%-2rem)]
+        mx-auto w-[calc(100%-2rem)]
         max-w-[1600px] py-10
       "
     >
