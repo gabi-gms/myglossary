@@ -1,36 +1,141 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# myGlossary
+
+A simple web glossary for exploring terms related to areas of the future, through search, categories, filters, and related concepts.
+
+## About
+
+**myGlossary** is a public glossary created to make technical concepts easier to find and understand.
+
+Each term includes a a detailed description, optional analogies, category information, and related concepts.
+
+The project was also developed as a full-stack portfolio application, focusing on clean architecture, responsive design, accessibility, database security, and maintainability.
+
+## Features
+
+* Search terms by name
+* Accent-insensitive and case-insensitive search
+* Filter by multiple categories and subcategories
+* Connected category and subcategory filters
+* Active filter tags
+* Pagination
+* Responsive term cards
+* Individual pages for each term
+* Optional name variations and analogies
+* Bidirectional related terms
+* Loading, empty, error, and not-found states
+* Public read-only access to glossary data
+
+## Tech Stack
+
+* [Next.js](https://nextjs.org/)
+* [React](https://react.dev/)
+* [TypeScript](https://www.typescriptlang.org/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [Supabase](https://supabase.com/)
+* PostgreSQL
+* Vercel
 
 ## Getting Started
 
-First, run the development server:
+### Requirements
+
+* Node.js
+* npm
+* A Supabase project
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/gabi-gms/myglossary.git
+cd myglossary
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Create a local environment file based on the example:
+
+```bash
+cp .env.example .env.local
+```
+
+Add your Supabase credentials to `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev
+```
 
-## Learn More
+Starts the development server.
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Checks the project for linting problems.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run build
+```
 
-## Deploy on Vercel
+Creates and validates the production build.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Runs the production build locally.
+
+## Database
+
+The PostgreSQL database contains four main tables:
+
+* `categories`
+* `subcategories`
+* `terms`
+* `term_relations`
+
+Database migrations and initial seed data are stored in:
+
+```text
+supabase/migrations
+```
+
+Public users have read-only access. Insert, update, and delete operations are protected through PostgreSQL permissions and Supabase Row Level Security policies.
+
+## Project Status
+
+The MVP is complete and is being prepared for new improvements.
+
+Current version:
+
+```text
+v1.0.0
+```
+
+## Documentation
+
+More information about the architecture, business rules, completed work, and future roadmap is available in the project documentation.
+
+## Author
+
+Developed by Gabi Rodrigues.
