@@ -619,7 +619,7 @@ Branches específicas poderão ser utilizadas depois da primeira versão públic
 - [x] documentação das decisões técnicas;
 - [x] documentação das regras de negócio;
 - [x] documentação do roadmap.
-- [ ] confirmar os links reais de GitHub, LinkedIn e e-mail;
+- [x] confirmar os links reais de GitHub, LinkedIn e e-mail;
 - [ ] atualizar a versão exibida no rodapé para `v1.0.0`;
 - [ ] executar a revisão final dos textos;
 - [ ] executar `npm run lint`;
@@ -635,31 +635,25 @@ Branches específicas poderão ser utilizadas depois da primeira versão públic
 
 ## Fase 7 — Deploy da versão 1.0.0 ⏳
 
-- [ ] 1. Atualizar a versão da aplicação para:
-
-```text
-v1.0.0
-```
-
-- [ ] 2. Confirmar que o projeto compila:
+- [ ] Confirmar que o projeto compila:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-- [ ] 3. Conectar o repositório à Vercel.
+- [ ] Conectar o repositório à Vercel.
 
-- [ ] 4. Configurar na Vercel:
+- [ ] Configurar na Vercel:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 ```
 
-- [ ] 5. Publicar a aplicação.
+- [ ] Publicar a aplicação.
 
-- [ ] 6. Validar em produção:
+- [ ] Validar em produção:
 
 * página principal;
 * pesquisa;
@@ -676,7 +670,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 * versão mobile;
 * versão desktop.
 
-- [ ] 7. Criar a release no GitHub.
+- [ ] Criar a release no GitHub.
 
 ---
 
