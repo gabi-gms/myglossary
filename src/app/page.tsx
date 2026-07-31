@@ -1,18 +1,21 @@
 import { GlossaryCatalog } from "@/components/glossary/GlossaryCatalog";
-import {
-  categories,
-  subcategories,
-} from "@/data/mockData";
-import { getTermsWithDetails } from "@/lib/glossary";
+import { getGlossaryData } from "@/lib/glossary-data";
+import { buildTermsWithDetails } from "@/lib/glossary";
 
-export default function Home() {
-  const terms = getTermsWithDetails();
+export default async function Home() {
+  const glossaryData = await getGlossaryData();
+
+  const terms = buildTermsWithDetails(
+    glossaryData.terms,
+    glossaryData.subcategories,
+    glossaryData.categories,
+  );
 
   return (
     <GlossaryCatalog
       terms={terms}
-      categories={categories}
-      subcategories={subcategories}
+      categories={glossaryData.categories}
+      subcategories={glossaryData.subcategories}
     />
   );
 }

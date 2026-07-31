@@ -5,7 +5,12 @@ import {
   terms,
 } from "@/data/mockData";
 
-import type { TermWithDetails } from "@/types/glossary";
+import type {
+  Category,
+  Subcategory,
+  Term,
+  TermWithDetails,
+} from "@/types/glossary";
 
 function sortTerms(
   firstTerm: TermWithDetails,
@@ -16,19 +21,26 @@ function sortTerms(
   });
 }
 
-export function getTermsWithDetails(): TermWithDetails[] {
+export function buildTermsWithDetails(
+  sourceTerms: Term[],
+  sourceSubcategories: Subcategory[],
+  sourceCategories: Category[],
+): TermWithDetails[] {
   const categoriesById = new Map(
-    categories.map((category) => [category.id, category]),
+    sourceCategories.map((category) => [
+      category.id,
+      category,
+    ]),
   );
 
   const subcategoriesById = new Map(
-    subcategories.map((subcategory) => [
+    sourceSubcategories.map((subcategory) => [
       subcategory.id,
       subcategory,
     ]),
   );
 
-  return terms
+  return sourceTerms
     .map((term) => {
       const subcategory = subcategoriesById.get(
         term.subcategoryId,
@@ -57,6 +69,14 @@ export function getTermsWithDetails(): TermWithDetails[] {
       };
     })
     .sort(sortTerms);
+}
+
+export function getTermsWithDetails(): TermWithDetails[] {
+  return buildTermsWithDetails(
+    terms,
+    subcategories,
+    categories,
+  );
 }
 
 export function getTermBySlug(
