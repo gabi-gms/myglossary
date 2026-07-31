@@ -14,7 +14,7 @@ export function TermCard({ term }: TermCardProps) {
 
   return (
     <Link
-      href={`/termos/${term.slug}`}
+      href={`/terms/${term.slug}`}
       style={categoryColor}
       className="
         flex min-h-56 flex-col gap-4 rounded-xl border border-[#3a363d]
