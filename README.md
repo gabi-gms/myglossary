@@ -10,6 +10,11 @@ Each term includes a a detailed description, optional analogies, category inform
 
 The project was also developed as a full-stack portfolio application, focusing on clean architecture, responsive design, accessibility, database security, and maintainability.
 
+## Live Demo
+
+[Open myGlossary](https://myglossary-self.vercel.app/terms/algoritmo)
+
+
 ## Features
 
 * Search terms by name

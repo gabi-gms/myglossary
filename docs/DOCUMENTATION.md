@@ -609,7 +609,7 @@ Branches específicas poderão ser utilizadas depois da primeira versão públic
 
 ---
 
-## Fase 6 — Documentação e preparação da release ⏳
+## Fase 6 — Documentação e preparação da release ✅
 
 - [x] criação de um README;
 - [x] descrição das funcionalidades;
@@ -620,40 +620,33 @@ Branches específicas poderão ser utilizadas depois da primeira versão públic
 - [x] documentação das regras de negócio;
 - [x] documentação do roadmap.
 - [x] confirmar os links reais de GitHub, LinkedIn e e-mail;
-- [ ] atualizar a versão exibida no rodapé para `v1.0.0`;
-- [ ] executar a revisão final dos textos;
-- [ ] executar `npm run lint`;
-- [ ] executar `npm run build`;
-- [ ] revisar o projeto em modo de produção;
-- [ ] verificar se nenhum segredo aparece no Git;
-- [ ] preparar as variáveis de ambiente na Vercel;
-- [ ] publicar a aplicação;
-- [ ] testar a URL pública;
-- [ ] criar a tag ou release `v1.0.0` no GitHub.
+- [x] atualizar a versão exibida no rodapé para `v1.0.0`;
+- [x] executar a revisão final dos textos;
+- [x] verificar se nenhum segredo aparece no Git;
 
 ---
 
-## Fase 7 — Deploy da versão 1.0.0 ⏳
+## Fase 7 — Deploy da versão 1.0.0 ✅
 
-- [ ] Confirmar que o projeto compila:
+- [x] Confirmar que o projeto compila:
 
 ```bash
 npm run lint
 npm run build
 ```
 
-- [ ] Conectar o repositório à Vercel.
+- [x] Conectar o repositório à Vercel.
 
-- [ ] Configurar na Vercel:
+- [x] Configurar na Vercel:
 
 ```text
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 ```
 
-- [ ] Publicar a aplicação.
+- [x] Publicar a aplicação.
 
-- [ ] Validar em produção:
+- [x] Validar em produção:
 
 * página principal;
 * pesquisa;
@@ -670,7 +663,7 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
 * versão mobile;
 * versão desktop.
 
-- [ ] Criar a release no GitHub.
+- [x] Criar a tag ou release `v1.0.0` no GitHub.
 
 ---
 
