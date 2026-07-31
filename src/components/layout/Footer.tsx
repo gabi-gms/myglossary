@@ -31,11 +31,11 @@ function FooterIconLink({
         flex size-9 items-center justify-center
         rounded-full border border-[#3a363d]
         text-[#8f878d] transition
-        hover:border-[#c97c91]
-        hover:text-[#c97c91]
+        hover:border-(--accent)
+        hover:text-(--accent)
         focus-visible:outline-2
         focus-visible:outline-offset-4
-        focus-visible:outline-[#c97c91]
+        focus-visible:outline-(--accent)
       "
     >
       {children}
@@ -103,7 +103,21 @@ export function Footer({
           sm:items-center
         "
       >
-        <p className="text-center sm:text-left">
+        <p
+          className="
+            flex items-center justify-center gap-2
+            text-center sm:justify-start sm:text-left
+          "
+        >
+          <span
+            aria-hidden="true"
+            className="
+              size-2 shrink-0 rounded-full
+              bg-(--accent)
+              shadow-[0_0_10px_color-mix(in_srgb,var(--accent)_60%,transparent)]
+            "
+          />
+
           {version}
         </p>
 

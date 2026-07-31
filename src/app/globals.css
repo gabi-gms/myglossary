@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #c11956;
+}
+
 html {
   min-height: 100%;
 }

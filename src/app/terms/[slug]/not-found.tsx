@@ -19,7 +19,7 @@ export default function TermNotFound() {
       <Link
         href="/"
         className="
-          rounded-lg bg-[#c97c91] px-5 py-3
+          rounded-lg bg-(--accent) px-5 py-3
           font-medium text-[#181719] no-underline
           transition hover:opacity-90
         "

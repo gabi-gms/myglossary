@@ -34,19 +34,6 @@ if (!term) {
       style={categoryColor}
       className="mx-auto w-[calc(100%-2rem)] max-w-5xl py-10"
     >
-      <header className="mb-8">
-        <Link
-          href="/"
-          className="
-            text-2xl font-bold text-[#f1edf0]
-            no-underline transition
-            hover:text-(--category-color)
-          "
-        >
-          myGlossary
-        </Link>
-      </header>
-
       <nav
         aria-label="Navegação estrutural"
         className="
@@ -64,11 +51,11 @@ if (!term) {
           Glossário
         </Link>
 
-        <span aria-hidden="true">›</span>
+        <span aria-hidden="true"></span>
         <span>{term.category.name}</span>
-        <span aria-hidden="true">›</span>
+        <span aria-hidden="true"></span>
         <span>{term.subcategory.name}</span>
-        <span aria-hidden="true">›</span>
+        <span aria-hidden="true"></span>
         <span aria-current="page">{term.name}</span>
       </nav>
 

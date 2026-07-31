@@ -238,14 +238,13 @@ const paginationItems = getPaginationItems(
         <div
           className="
             grid items-start gap-4
-            lg:grid-cols-[auto_minmax(280px,1fr)_minmax(360px,auto)]
+            lg:grid-cols-[minmax(280px,1fr)_minmax(360px,auto)]
             lg:items-start
           "
         >
-          <h1 className="text-3xl font-bold text-[#f1edf0]">
+          <h1 className="sr-only">
             myGlossary
           </h1>
-
           <label>
             <span className="sr-only">
               Pesquisar termos
@@ -264,8 +263,8 @@ const paginationItems = getPaginationItems(
                 bg-[#222024] px-4 py-3 text-[#f1edf0]
                 outline-none transition
                 placeholder:text-[#777077]
-                focus:border-[#c97c91]
-                focus:ring-2 focus:ring-[#c97c91]/20
+                focus:border-(--accent)
+                focus:ring-2 focus:ring-(--accent)/20
               "
             />
           </label>
@@ -300,9 +299,9 @@ const paginationItems = getPaginationItems(
                 type="button"
                 onClick={() => toggleCategory(category.id)}
                 className="
-                  rounded-full border border-[#c97c91]
-                  px-3 py-1.5 text-xs text-[#c97c91]
-                  transition hover:bg-[#c97c91]/10
+                  rounded-full border border-(--accent)
+                  px-3 py-1.5 text-xs text-(--accent)
+                  transition hover:bg-(--accent)/10
                 "
                 aria-label={`Remover categoria ${category.name}`}
               >
@@ -440,7 +439,7 @@ const paginationItems = getPaginationItems(
                 rounded-lg border text-sm transition
                 ${
                   isCurrentPage
-                    ? "border-[#c97c91] bg-[#c97c91] font-semibold text-[#181719]"
+                    ? "border-(--accent) bg-(--accent) font-semibold text-[#181719]"
                     : "border-[#3a363d] bg-[#222024] text-[#d5cfd3] hover:border-[#6a626a]"
                 }
               `}
@@ -492,7 +491,7 @@ const paginationItems = getPaginationItems(
       type="button"
       onClick={clearAllFilters}
       className="
-        rounded-lg bg-[#c97c91] px-5 py-3
+        rounded-lg bg-(--accent) px-5 py-3
         font-medium text-[#181719]
         transition hover:opacity-90
       "

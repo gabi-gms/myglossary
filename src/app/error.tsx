@@ -32,8 +32,8 @@ export default function GlossaryError({
       <div
         className="
           flex size-14 items-center justify-center
-          rounded-full border border-[#c97c91]
-          text-2xl text-[#c97c91]
+          rounded-full border border-(--accent)
+          text-2xl text-(--accent)
         "
         aria-hidden="true"
       >
@@ -55,12 +55,12 @@ export default function GlossaryError({
         type="button"
         onClick={reset}
         className="
-          rounded-lg bg-[#c97c91] px-5 py-3
+          rounded-lg bg-(--accent) px-5 py-3
           font-medium text-[#181719]
           transition hover:opacity-90
           focus-visible:outline-2
           focus-visible:outline-offset-4
-          focus-visible:outline-[#c97c91]
+          focus-visible:outline-(--accent)
         "
       >
         Tentar novamente
