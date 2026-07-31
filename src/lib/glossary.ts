@@ -1,10 +1,3 @@
-import {
-  categories,
-  subcategories,
-  termRelations,
-  terms,
-} from "@/data/mockData";
-
 import type {
   Category,
   Subcategory,
@@ -17,9 +10,13 @@ function sortTerms(
   firstTerm: TermWithDetails,
   secondTerm: TermWithDetails,
 ) {
-  return firstTerm.name.localeCompare(secondTerm.name, "pt-BR", {
-    sensitivity: "base",
-  });
+  return firstTerm.name.localeCompare(
+    secondTerm.name,
+    "pt-BR",
+    {
+      sensitivity: "base",
+    },
+  );
 }
 
 export function buildTermsWithDetails(
@@ -76,7 +73,9 @@ export function findTermBySlug(
   sourceTerms: TermWithDetails[],
   slug: string,
 ): TermWithDetails | undefined {
-  return sourceTerms.find((term) => term.slug === slug);
+  return sourceTerms.find(
+    (term) => term.slug === slug,
+  );
 }
 
 export function findRelatedTerms(
@@ -107,33 +106,4 @@ export function findRelatedTerms(
         term !== undefined,
     )
     .sort(sortTerms);
-}
-
-/*
- * As funções abaixo mantêm compatibilidade com os mocks.
- * Poderemos removê-las quando a transição estiver concluída.
- */
-
-export function getTermsWithDetails(): TermWithDetails[] {
-  return buildTermsWithDetails(
-    terms,
-    subcategories,
-    categories,
-  );
-}
-
-export function getTermBySlug(
-  slug: string,
-): TermWithDetails | undefined {
-  return findTermBySlug(getTermsWithDetails(), slug);
-}
-
-export function getRelatedTerms(
-  termId: string,
-): TermWithDetails[] {
-  return findRelatedTerms(
-    termId,
-    getTermsWithDetails(),
-    termRelations,
-  );
 }
