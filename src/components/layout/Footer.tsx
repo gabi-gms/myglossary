@@ -31,11 +31,11 @@ function FooterIconLink({
         flex size-9 items-center justify-center
         rounded-full border border-[#3a363d]
         text-[#8f878d] transition
-        hover:border-(--accent)
-        hover:text-(--accent)
+        hover:border-(--color-accent)
+        hover:text-(--color-accent)
         focus-visible:outline-2
         focus-visible:outline-offset-4
-        focus-visible:outline-(--accent)
+        focus-visible:outline-(--color-accent)
       "
     >
       {children}
@@ -113,8 +113,8 @@ export function Footer({
             aria-hidden="true"
             className="
               size-2 shrink-0 rounded-full
-              bg-(--accent)
-              shadow-[0_0_10px_color-mix(in_srgb,var(--accent)_60%,transparent)]
+              bg-(--color-accent)
+              shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_60%,transparent)]
             "
           />
 

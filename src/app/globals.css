@@ -5,7 +5,47 @@
 }
 
 :root {
-  --accent: #c11956;
+  /* Brand */
+  --color-accent: #c11956;
+  --color-accent-foreground: #fff7fa;
+
+  /* Accent variations */
+  --color-accent-soft: color-mix(
+    in srgb,
+    var(--color-accent) 12%,
+    transparent
+  );
+
+  --color-accent-ring: color-mix(
+    in srgb,
+    var(--color-accent) 20%,
+    transparent
+  );
+
+  --color-accent-glow: color-mix(
+    in srgb,
+    var(--color-accent) 65%,
+    transparent
+  );
+
+  /* Backgrounds and surfaces */
+  --color-background: #181719;
+  --color-surface: #222024;
+  --color-surface-soft: #2d2a2f;
+  --color-surface-muted: #302c32;
+  --color-surface-strong: #373239;
+  --color-surface-hover: rgb(255 255 255 / 5%);
+
+  /* Borders */
+  --color-border: #3a363d;
+  --color-border-hover: #6a626a;
+
+  /* Text */
+  --color-text-primary: #f1edf0;
+  --color-text-body: #d5cfd3;
+  --color-text-secondary: #b9b1b7;
+  --color-text-muted: #8f878d;
+  --color-text-subtle: #777077;
 }
 
 html {
@@ -15,6 +55,6 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background: #181719;
-  color: #f1edf0;
+  background: var(--color-background);
+  color: var(--color-text-primary);
 }

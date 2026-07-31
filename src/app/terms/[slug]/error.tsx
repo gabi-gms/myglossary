@@ -44,7 +44,7 @@ export default function TermError({
           type="button"
           onClick={reset}
           className="
-            rounded-lg bg-(--accent) px-5 py-3
+            rounded-lg bg-(--color-accent) px-5 py-3
             font-medium text-[#181719]
             transition hover:opacity-90
           "
@@ -55,11 +55,11 @@ export default function TermError({
         <Link
           href="/"
           className="
-            rounded-lg border border-(--accent)
-            px-5 py-3 font-medium text-(--accent)
+            rounded-lg border border-(--color-accent)
+            px-5 py-3 font-medium text-(--color-accent)
             no-underline transition
-            hover:border-(--accent)
-            hover:text-(--accent)
+            hover:border-(--color-accent)
+            hover:text-(--color-accent)
           "
         >
           Voltar ao glossário

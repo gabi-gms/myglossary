@@ -18,15 +18,15 @@ export function Header() {
             transition hover:opacity-90
             focus-visible:outline-2
             focus-visible:outline-offset-4
-            focus-visible:outline-(--accent)
+            focus-visible:outline-(--color-accent)
           "
         >
           <span
             aria-hidden="true"
             className="
               size-2.5 shrink-0 rounded-full
-              bg-(--accent)
-              shadow-[0_0_12px_color-mix(in_srgb,var(--accent)_65%,transparent)]
+              bg-(--color-accent)
+              shadow-[0_0_12px_color-mix(in_srgb,var(--color-accent)_65%,transparent)]
             "
           />
 
@@ -36,10 +36,10 @@ export function Header() {
 
           <span
             className="
-              rounded-full border border-(--accent)
-              bg-[color-mix(in_srgb,var(--accent)_12%,transparent)]
+              rounded-full border border-(--color-accent)
+              bg-[color-mix(in_srgb,var(--color-accent)_12%,transparent)]
               px-2 py-0.5 text-[0.625rem] font-bold
-              tracking-[0.14em] text-(--accent)
+              tracking-[0.14em] text-(--color-accent)
             "
           >
             BETA

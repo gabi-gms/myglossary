@@ -263,8 +263,8 @@ const paginationItems = getPaginationItems(
                 bg-[#222024] px-4 py-3 text-[#f1edf0]
                 outline-none transition
                 placeholder:text-[#777077]
-                focus:border-(--accent)
-                focus:ring-2 focus:ring-(--accent)/20
+                focus:border-(--color-accent)
+                focus:ring-2 focus:ring-(--color-accent)/20
               "
             />
           </label>
@@ -299,9 +299,9 @@ const paginationItems = getPaginationItems(
                 type="button"
                 onClick={() => toggleCategory(category.id)}
                 className="
-                  rounded-full border border-(--accent)
-                  px-3 py-1.5 text-xs text-(--accent)
-                  transition hover:bg-(--accent)/10
+                  rounded-full border border-(--color-accent)
+                  px-3 py-1.5 text-xs text-(--color-accent)
+                  transition hover:bg-(--color-accent)/10
                 "
                 aria-label={`Remover categoria ${category.name}`}
               >
@@ -439,7 +439,7 @@ const paginationItems = getPaginationItems(
                 rounded-lg border text-sm transition
                 ${
                   isCurrentPage
-                    ? "border-(--accent) bg-(--accent) font-semibold text-[#181719]"
+                    ? "border-(--color-accent) bg-(--color-accent) font-semibold text-[#181719]"
                     : "border-[#3a363d] bg-[#222024] text-[#d5cfd3] hover:border-[#6a626a]"
                 }
               `}
@@ -491,7 +491,7 @@ const paginationItems = getPaginationItems(
       type="button"
       onClick={clearAllFilters}
       className="
-        rounded-lg bg-(--accent) px-5 py-3
+        rounded-lg bg-(--color-accent) px-5 py-3
         font-medium text-[#181719]
         transition hover:opacity-90
       "

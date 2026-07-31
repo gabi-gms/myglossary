@@ -57,7 +57,7 @@ export function MultiSelectFilter({
                 type="checkbox"
                 checked={selectedIds.includes(option.id)}
                 onChange={() => onToggle(option.id)}
-                className="size-4 accent-(--accent)"
+                className="size-4 accent-(--color-accent)"
               />
 
               <span>{option.name}</span>
