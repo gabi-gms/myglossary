@@ -8,11 +8,11 @@ export default function TermNotFound() {
         justify-center gap-6 px-6 text-center
       "
     >
-      <h1 className="text-3xl font-bold text-[#f1edf0]">
+      <h1 className="text-3xl font-bold text-(--color-text-primary)">
         Termo não encontrado
       </h1>
 
-      <p className="text-[#b9b1b7]">
+      <p className="text-(--color-text-secondary)">
         O termo solicitado não existe ou não está disponível.
       </p>
 
@@ -20,7 +20,7 @@ export default function TermNotFound() {
         href="/"
         className="
           rounded-lg bg-(--color-accent) px-5 py-3
-          font-medium text-[#181719] no-underline
+          font-medium text-(--color-accent-foreground) no-underline
           transition hover:opacity-90
         "
       >

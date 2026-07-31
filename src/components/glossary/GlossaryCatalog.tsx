@@ -259,10 +259,10 @@ const paginationItems = getPaginationItems(
                }}
               placeholder="Pesquisar um termo..."
               className="
-                w-full rounded-lg border border-[#3a363d]
-                bg-[#222024] px-4 py-3 text-[#f1edf0]
+                w-full rounded-lg border border-(--color-border)
+                bg-(--color-surface) px-4 py-3 text-(--color-text-primary)
                 outline-none transition
-                placeholder:text-[#777077]
+                placeholder:text-(--color-text-subtle)
                 focus:border-(--color-accent)
                 focus:ring-2 focus:ring-(--color-accent)/20
               "
@@ -301,7 +301,7 @@ const paginationItems = getPaginationItems(
                 className="
                   rounded-full border border-(--color-accent)
                   px-3 py-1.5 text-xs text-(--color-accent)
-                  transition hover:bg-(--color-accent)/10
+                  transition hover:bg-(--color-accent-soft)
                 "
                 aria-label={`Remover categoria ${category.name}`}
               >
@@ -317,9 +317,9 @@ const paginationItems = getPaginationItems(
                   toggleSubcategory(subcategory.id)
                 }
                 className="
-                  rounded-full border border-[#777077]
-                  px-3 py-1.5 text-xs text-[#b9b1b7]
-                  transition hover:bg-white/5
+                  rounded-full border border-(--color-text-subtle)
+                  px-3 py-1.5 text-xs text-(--color-text-secondary)
+                  transition hover:bg-(--color-surface-hover)
                 "
                 aria-label={`Remover subcategoria ${subcategory.name}`}
               >
@@ -332,9 +332,9 @@ const paginationItems = getPaginationItems(
                 type="button"
                 onClick={clearAllFilters}
                 className="
-                  px-2 py-1 text-xs text-[#b9b1b7]
+                  px-2 py-1 text-xs text-(--color-text-secondary)
                   underline-offset-4 transition
-                  hover:text-[#f1edf0] hover:underline
+                  hover:text-(--color-text-primary) hover:underline
                 "
               >
                 Limpar filtros
@@ -344,7 +344,7 @@ const paginationItems = getPaginationItems(
 
           <p
             className="
-                shrink-0 text-sm text-[#b9b1b7]
+                shrink-0 text-sm text-(--color-text-secondary)
                 sm:pt-1
             "
             aria-live="polite"
@@ -355,7 +355,7 @@ const paginationItems = getPaginationItems(
                 : "termos encontrados"}
 
             {filteredTerms.length > 0 && (
-                <span className="ml-2 text-[#777077]">
+                <span className="ml-2 text-(--color-text-subtle)">
                 • Página {currentPage} de {totalPages}
                 </span>
             )}
@@ -394,11 +394,11 @@ const paginationItems = getPaginationItems(
             setCurrentPage((page) => page - 1)
           }
           className="
-            rounded-lg border border-[#3a363d]
-            bg-[#222024] px-4 py-2
-            text-sm text-[#d5cfd3]
+            rounded-lg border border-(--color-border)
+            bg-(--color-surface) px-4 py-2
+            text-sm text-(--color-text-body)
             transition
-            hover:border-[#6a626a]
+            hover:border-(--color-border-hover)
             disabled:cursor-not-allowed
             disabled:opacity-40
           "
@@ -414,7 +414,7 @@ const paginationItems = getPaginationItems(
                 aria-hidden="true"
                 className="
                   flex size-10 items-center
-                  justify-center text-[#777077]
+                  justify-center text-(--color-text-subtle)
                 "
               >
                 …
@@ -439,8 +439,8 @@ const paginationItems = getPaginationItems(
                 rounded-lg border text-sm transition
                 ${
                   isCurrentPage
-                    ? "border-(--color-accent) bg-(--color-accent) font-semibold text-[#181719]"
-                    : "border-[#3a363d] bg-[#222024] text-[#d5cfd3] hover:border-[#6a626a]"
+                    ? "border-(--color-accent) bg-(--color-accent) font-semibold text-(--color-accent-foreground)"
+                    : "border-(--color-border) bg-(--color-surface) text-(--color-text-body) hover:border-(--color-border-hover)"
                 }
               `}
             >
@@ -456,11 +456,11 @@ const paginationItems = getPaginationItems(
             setCurrentPage((page) => page + 1)
           }
           className="
-            rounded-lg border border-[#3a363d]
-            bg-[#222024] px-4 py-2
-            text-sm text-[#d5cfd3]
+            rounded-lg border border-(--color-border)
+            bg-(--color-surface) px-4 py-2
+            text-sm text-(--color-text-body)
             transition
-            hover:border-[#6a626a]
+            hover:border-(--color-border-hover)
             disabled:cursor-not-allowed
             disabled:opacity-40
           "
@@ -475,15 +475,15 @@ const paginationItems = getPaginationItems(
     className="
       flex min-h-80 flex-col items-center
       justify-center gap-4 rounded-xl
-      border border-dashed border-[#3a363d]
+      border border-dashed border-(--color-border)
       px-6 text-center
     "
   >
-    <h2 className="text-2xl font-semibold text-[#f1edf0]">
+    <h2 className="text-2xl font-semibold text-(--color-text-primary)">
       Nenhum termo encontrado
     </h2>
 
-    <p className="max-w-md text-[#b9b1b7]">
+    <p className="max-w-md text-(--color-text-secondary)">
       Tente alterar a pesquisa ou remover alguns filtros.
     </p>
 
@@ -492,7 +492,7 @@ const paginationItems = getPaginationItems(
       onClick={clearAllFilters}
       className="
         rounded-lg bg-(--color-accent) px-5 py-3
-        font-medium text-[#181719]
+        font-medium text-(--color-accent-foreground)
         transition hover:opacity-90
       "
     >

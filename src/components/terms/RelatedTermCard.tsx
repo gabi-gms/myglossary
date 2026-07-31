@@ -22,7 +22,7 @@ export function RelatedTermCard({
       style={categoryColor}
       className="
         flex min-h-40 flex-col gap-3 rounded-xl
-        border border-[#3a363d] bg-[#222024] p-5
+        border border-(--color-border) bg-(--color-surface) p-5
         text-inherit no-underline transition duration-200
         hover:-translate-y-0.5
         hover:border-(--category-color)
@@ -32,11 +32,11 @@ export function RelatedTermCard({
         focus-visible:outline-(--category-color)
       "
     >
-      <h3 className="text-lg font-semibold text-[#f1edf0]">
+      <h3 className="text-lg font-semibold text-(--color-text-primary)">
         {term.name}
       </h3>
 
-      <p className="line-clamp-3 text-sm leading-relaxed text-[#b9b1b7]">
+      <p className="line-clamp-3 text-sm leading-relaxed text-(--color-text-secondary)">
         {term.shortDescription}
       </p>
     </Link>

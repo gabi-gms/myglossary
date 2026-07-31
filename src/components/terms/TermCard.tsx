@@ -19,8 +19,8 @@ export function TermCard({ term }: TermCardProps) {
       href={`/terms/${term.slug}`}
       style={categoryColor}
       className="
-        flex min-h-56 flex-col gap-4 rounded-xl border border-[#3a363d]
-        bg-[#222024] p-6 text-inherit no-underline
+        flex min-h-56 flex-col gap-4 rounded-xl border border-(--color-border)
+        bg-(--color-surface) p-6 text-inherit no-underline
         transition duration-200
         hover:-translate-y-0.5
         hover:border-(--category-color)
@@ -30,11 +30,11 @@ export function TermCard({ term }: TermCardProps) {
         focus-visible:outline-(--category-color)
       "
     >
-      <h2 className="text-xl font-semibold text-[#f1edf0]">
+      <h2 className="text-xl font-semibold text-(--color-text-primary)">
         {term.name}
       </h2>
 
-      <p className="line-clamp-3 flex-1 leading-relaxed text-[#b9b1b7]">
+      <p className="line-clamp-3 flex-1 leading-relaxed text-(--color-text-secondary)">
         {term.shortDescription}
       </p>
 
@@ -42,7 +42,7 @@ export function TermCard({ term }: TermCardProps) {
         <span
           className="
             rounded-full bg-(--category-color) px-3 py-1
-            text-xs font-medium text-[#181719]
+            text-xs font-medium text-(--color-background)
           "
         >
           {term.category.name}

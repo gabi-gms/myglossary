@@ -41,11 +41,11 @@ export default function GlossaryError({
       </div>
 
       <div className="space-y-3">
-        <h1 className="text-3xl font-bold text-[#f1edf0]">
+        <h1 className="text-3xl font-bold text-(--color-text-primary)">
           Não foi possível carregar o glossário
         </h1>
 
-        <p className="max-w-lg leading-relaxed text-[#b9b1b7]">
+        <p className="max-w-lg leading-relaxed text-(--color-text-secondary)">
           Ocorreu um problema ao buscar os termos. Verifique
           sua conexão e tente novamente.
         </p>
@@ -56,7 +56,7 @@ export default function GlossaryError({
         onClick={reset}
         className="
           rounded-lg bg-(--color-accent) px-5 py-3
-          font-medium text-[#181719]
+          font-medium text-(--color-accent-foreground)
           transition hover:opacity-90
           focus-visible:outline-2
           focus-visible:outline-offset-4

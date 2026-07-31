@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function Header() {
   return (
-    <header className="border-b border-[#3a363d] bg-[#181719]">
+    <header className="border-b border-(--color-border) bg-(--color-background)">
       <nav
         aria-label="Navegação principal"
         className="
@@ -14,7 +14,7 @@ export function Header() {
           href="/"
           className="
             inline-flex items-center gap-3
-            text-[#f1edf0] no-underline
+            text-(--color-text-primary) no-underline
             transition hover:opacity-90
             focus-visible:outline-2
             focus-visible:outline-offset-4
@@ -26,7 +26,7 @@ export function Header() {
             className="
               size-2.5 shrink-0 rounded-full
               bg-(--color-accent)
-              shadow-[0_0_12px_color-mix(in_srgb,var(--color-accent)_65%,transparent)]
+              shadow-[0_0_12px_var(--color-accent-glow)]
             "
           />
 
@@ -36,9 +36,9 @@ export function Header() {
 
           <span
             className="
-              rounded-full border border-(--color-accent)
-              bg-[color-mix(in_srgb,var(--color-accent)_12%,transparent)]
-              px-2 py-0.5 text-[0.625rem] font-bold
+              rounded
+              bg-(--color-accent-soft)
+              px-1.5 py-0.5 text-[0.550rem] font-bold
               tracking-[0.14em] text-(--color-accent)
             "
           >

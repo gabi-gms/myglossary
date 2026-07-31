@@ -21,15 +21,15 @@ export function MultiSelectFilter({
       <summary
         className="
           flex cursor-pointer list-none items-center justify-between
-          gap-3 rounded-lg border border-[#3a363d]
-          bg-[#222024] px-4 py-3 text-sm text-[#f1edf0]
-          transition hover:border-[#6a626a]
+          gap-3 rounded-lg border border-(--color-border)
+          bg-(--color-surface) px-4 py-3 text-sm text-(--color-text-primary)
+          transition hover:border-(--color-border-hover)
           [&::-webkit-details-marker]:hidden
         "
       >
         <span>{label}</span>
 
-        <span className="text-xs text-[#b9b1b7]">
+        <span className="text-xs text-(--color-text-secondary)">
           {selectedIds.length > 0
             ? `${selectedIds.length} selecionado(s)`
             : "▾"}
@@ -39,7 +39,7 @@ export function MultiSelectFilter({
       <div
         className="
           mt-2 max-h-72 overflow-y-auto rounded-xl
-          border border-[#3a363d] bg-[#222024] p-2
+          border border-(--color-border) bg-(--color-surface) p-2
           shadow-xl
         "
       >
@@ -49,8 +49,8 @@ export function MultiSelectFilter({
               key={option.id}
               className="
                 flex cursor-pointer items-center gap-3
-                rounded-lg px-3 py-2 text-sm text-[#d5cfd3]
-                transition hover:bg-white/5
+                rounded-lg px-3 py-2 text-sm text-(--color-text-body)
+                transition hover:bg-(--color-surface-hover)
               "
             >
               <input
@@ -64,7 +64,7 @@ export function MultiSelectFilter({
             </label>
           ))
         ) : (
-          <p className="px-3 py-2 text-sm text-[#8f878d]">
+          <p className="px-3 py-2 text-sm text-(--color-text-muted)">
             Nenhuma opção disponível
           </p>
         )}

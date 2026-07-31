@@ -38,7 +38,7 @@ if (!term) {
         aria-label="Navegação estrutural"
         className="
           mb-12 flex flex-wrap items-center gap-2
-          text-sm text-[#b9b1b7]
+          text-sm text-(--color-text-secondary)
         "
       >
         <Link
@@ -51,11 +51,11 @@ if (!term) {
           Glossário
         </Link>
 
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true">&#62;</span>
         <span>{term.category.name}</span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true">&#62;</span>
         <span>{term.subcategory.name}</span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true">&#62;</span>
         <span aria-current="page">{term.name}</span>
       </nav>
 
@@ -70,7 +70,7 @@ if (!term) {
         </h1>
 
         {term.nameVariations.length > 0 && (
-          <div className="mb-10 text-sm text-[#b9b1b7]">
+          <div className="mb-10 text-sm text-(--color-text-secondary)">
             {term.nameVariations.map((variation) => (
               <p key={variation}>{variation}</p>
             ))}
@@ -78,7 +78,7 @@ if (!term) {
         )}
 
         <section className="mb-10">
-          <p className="text-justify leading-8 text-[#d5cfd3]">
+          <p className="text-justify leading-8 text-(--color-text-body)">
             {term.fullDescription}
           </p>
         </section>
@@ -94,7 +94,7 @@ if (!term) {
               Analogia
             </h2>
 
-            <p className="text-justify leading-8 text-[#d5cfd3]">
+            <p className="text-justify leading-8 text-(--color-text-body)">
               {term.analogy}
             </p>
           </section>
@@ -104,7 +104,7 @@ if (!term) {
           <span
             className="
               rounded-full bg-(--category-color)
-              px-4 py-2 text-sm font-medium text-[#181719]
+              px-4 py-2 text-sm font-medium text-(--color-background)
             "
           >
             {term.category.name}

@@ -30,11 +30,11 @@ export default function TermError({
         gap-6 px-6 text-center
       "
     >
-      <h1 className="text-3xl font-bold text-[#f1edf0]">
+      <h1 className="text-3xl font-bold text-(--color-text-primary)">
         Não foi possível carregar este termo
       </h1>
 
-      <p className="max-w-lg leading-relaxed text-[#b9b1b7]">
+      <p className="max-w-lg leading-relaxed text-(--color-text-secondary)">
         Ocorreu um problema ao buscar os detalhes. Você pode
         tentar novamente ou voltar ao glossário.
       </p>
@@ -45,7 +45,7 @@ export default function TermError({
           onClick={reset}
           className="
             rounded-lg bg-(--color-accent) px-5 py-3
-            font-medium text-[#181719]
+            font-medium text-(--color-accent-foreground)
             transition hover:opacity-90
           "
         >

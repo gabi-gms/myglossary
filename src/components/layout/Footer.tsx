@@ -29,8 +29,8 @@ function FooterIconLink({
       rel={external ? "noopener noreferrer" : undefined}
       className="
         flex size-9 items-center justify-center
-        rounded-full border border-[#3a363d]
-        text-[#8f878d] transition
+        rounded-full border border-(--color-border)
+        text-(--color-text-muted) transition
         hover:border-(--color-accent)
         hover:text-(--color-accent)
         focus-visible:outline-2
@@ -93,12 +93,12 @@ export function Footer({
   contactEmail,
 }: FooterProps) {
   return (
-    <footer className="border-t border-[#3a363d] bg-[#181719]">
+    <footer className="border-t border-(--color-border) bg-(--color-background)">
       <div
         className="
           mx-auto grid w-[calc(100%-2rem)]
           max-w-[1600px] gap-4 py-6
-          text-sm text-[#8f878d]
+          text-sm text-(--color-text-muted)
           sm:grid-cols-[1fr_auto_1fr]
           sm:items-center
         "
@@ -114,7 +114,7 @@ export function Footer({
             className="
               size-2 shrink-0 rounded-full
               bg-(--color-accent)
-              shadow-[0_0_10px_color-mix(in_srgb,var(--color-accent)_60%,transparent)]
+              shadow-[0_0_10px_var(--color-accent-glow)]
             "
           />
 
